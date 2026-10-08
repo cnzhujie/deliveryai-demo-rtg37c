@@ -160,7 +160,7 @@ export default function App() {
         </DialogContent>
       </Dialog>
 
-      <div className="fixed bottom-20 left-1/2 z-30 -translate-x-1/2 lg:hidden">
+      <div className="fixed bottom-24 left-1/2 z-30 -translate-x-1/2 lg:hidden">
         {state.view === 'menu' && state.cart.length > 0 && (
           <Button onClick={() => setCartOpen(true)} className="h-12 rounded-full px-5 shadow-float">
             <span className="relative"><ShoppingBasket size={19} /><span className="absolute -right-2 -top-2 flex h-4 min-w-4 items-center justify-center rounded-full bg-amber-400 px-1 text-xs text-charcoal-900">{state.cart.length}</span></span>

@@ -8,6 +8,8 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; min-width: 320px; min-height: 100vh; background: #fbf5ea; }
 button, input { font: inherit; }
+/* 移动端：去除浏览器默认点击高亮 */
+html { -webkit-tap-highlight-color: transparent; }
 ::selection { background: #ffddd8; color: #a9231a; }
 
 /* 老人模式全局基础：放大字号约 1.25 倍 */

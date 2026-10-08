@@ -25,7 +25,21 @@ export default defineConfig({
     },
   },
   projects: [
-    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
+      // 桌面端视口不跑移动端专用用例
+      testIgnore: 'mobile.spec.ts',
+    },
+    {
+      name: 'mobile-chrome',
+      use: {
+        viewport: { width: 375, height: 812 },
+        hasTouch: true,
+      },
+      // 移动端视口只跑移动端专用用例
+      testMatch: 'mobile.spec.ts',
+    },
   ],
   webServer: {
     command: `npm run dev -- --port ${PORT} --strictPort`,

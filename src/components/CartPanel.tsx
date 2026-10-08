@@ -41,10 +41,10 @@ export function CartPanel({ items, compact, onQuantity, onSubmit }: CartPanelPro
               <p className="mt-1 truncate text-xs text-charcoal-500">{item.spec}</p>
               <div className="mt-2 flex items-center justify-between">
                 <span className="flex items-center gap-1 text-xs font-semibold text-charcoal-500"><span className="h-5 w-5 rounded-full bg-amber-100 text-center leading-5 text-amber-500">{item.orderedBy.slice(0, 1)}</span>{t('cart.ordered_by', { name: item.orderedBy })}</span>
-                <div className="flex items-center gap-2 rounded-lg bg-rice-100 p-1">
-                  <button onClick={() => onQuantity(item.uid, -1)} className="rounded-md bg-white p-1 text-charcoal-700 shadow-sm" aria-label={t('common.aria_reduce')}>{item.quantity === 1 ? <Trash2 size={13} /> : <Minus size={13} />}</button>
-                  <span className="w-4 text-center text-xs font-bold text-charcoal-900">{item.quantity}</span>
-                  <button onClick={() => onQuantity(item.uid, 1)} className="rounded-md bg-chili-500 p-1 text-white" aria-label={t('common.aria_increase')}><Plus size={13} /></button>
+                <div className="flex items-center gap-1.5 rounded-lg bg-rice-100 p-1">
+                  <button onClick={() => onQuantity(item.uid, -1)} className="flex h-9 w-9 items-center justify-center rounded-md bg-white text-charcoal-700 shadow-sm md:h-11 md:w-11" aria-label={t('common.aria_reduce')}>{item.quantity === 1 ? <Trash2 size={16} /> : <Minus size={16} />}</button>
+                  <span className="w-5 text-center text-xs font-bold text-charcoal-900">{item.quantity}</span>
+                  <button onClick={() => onQuantity(item.uid, 1)} className="flex h-9 w-9 items-center justify-center rounded-md bg-chili-500 text-white md:h-11 md:w-11" aria-label={t('common.aria_increase')}><Plus size={16} /></button>
                 </div>
               </div>
             </div>

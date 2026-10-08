@@ -39,7 +39,7 @@ export function TopBar({ table, view, serviceCount, language, elderly, onToggleL
             <Button variant={view === 'menu' ? 'secondary' : 'ghost'} size="sm" onClick={() => onView('menu')}><Search size={16} />{t('common.nav_menu')}</Button>
             <Button variant={view === 'order' ? 'secondary' : 'ghost'} size="sm" onClick={() => onView('order')}><ReceiptText size={16} />{t('common.nav_order')}</Button>
           </nav>
-          <Button variant="outline" size="icon" onClick={onService} className="relative" aria-label={t('common.aria_service')}>
+          <Button variant="outline" size="icon" onClick={onService} className="relative hidden lg:inline-flex" aria-label={t('common.aria_service')}>
             <PhoneCall size={18} />{serviceCount > 0 && <span className="absolute -right-1 -top-1 h-3 w-3 rounded-full border-2 border-white bg-chili-500" />}
           </Button>
           <Dialog>
@@ -55,7 +55,7 @@ export function TopBar({ table, view, serviceCount, language, elderly, onToggleL
               </div>
             </DialogContent>
           </Dialog>
-          <Button variant="outline" size="icon" onClick={onConsole} aria-label={t('common.aria_console')}><LayoutDashboard size={18} /></Button>
+          <Button variant="outline" size="icon" onClick={onConsole} className="hidden lg:inline-flex" aria-label={t('common.aria_console')}><LayoutDashboard size={18} /></Button>
           <Button variant="outline" size="icon" onClick={onToggleElderly} aria-label={elderly ? '切换至常规模式' : '切换至老人模式'}>
             <Accessibility size={18} className={elderly ? 'text-chili-500' : ''} />
           </Button>
