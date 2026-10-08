@@ -28,7 +28,7 @@ test.describe('移动端适配 - E2E 验收测试', () => {
     await expect(page.getByRole('heading', { name: '牛油麻辣锅' })).toBeVisible()
 
     // 切换分类 — 肉类
-    await page.getByRole('button', { name: '肉类' }).click()
+    await page.getByRole('button', { name: '牛羊肉' }).click()
 
     // 搜索菜品
     await page.getByPlaceholder(/搜索|Search/).fill('牛')
@@ -69,7 +69,7 @@ test.describe('移动端适配 - E2E 验收测试', () => {
 
     // 点击浮动购物车按钮打开购物车弹窗
     await cartBtn.click()
-    await expect(page.getByText('本桌购物车').first()).toBeVisible()
+    await expect(page.getByRole('dialog').getByText('本桌购物车').first()).toBeVisible()
   })
 
   test('E2E-004: 移动端菜单页无水平滚动条（360px 视口无溢出）', async ({ page }) => {
@@ -82,7 +82,7 @@ test.describe('移动端适配 - E2E 验收测试', () => {
     await page.getByRole('button', { name: '锅底' }).click()
     await expectNoHorizontalOverflow(page)
 
-    await page.getByRole('button', { name: '肉类' }).click()
+    await page.getByRole('button', { name: '牛羊肉' }).click()
     await expectNoHorizontalOverflow(page)
   })
 
