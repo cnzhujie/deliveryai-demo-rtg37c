@@ -110,8 +110,8 @@ export default function App() {
       />
 
       {state.view === 'menu' && (
-        <main className="mx-auto grid max-w-7xl gap-6 px-4 py-5 pb-28 lg:grid-cols-3 lg:px-6 lg:py-7 lg:pb-8">
-          <div className="lg:col-span-2">
+        <main className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 py-5 pb-28 lg:grid-cols-3 lg:px-6 lg:py-7 lg:pb-8">
+          <div className="min-w-0 lg:col-span-2">
             <MenuView diners={state.diners} soldOut={state.soldOut} onAdd={(item) => dispatch({ type: 'ADD_CART', item })} />
           </div>
           <aside className="hidden lg:block">
@@ -160,9 +160,9 @@ export default function App() {
         </DialogContent>
       </Dialog>
 
-      <div className="fixed bottom-20 left-1/2 z-30 -translate-x-1/2 lg:hidden">
+      <div className="fixed bottom-[calc(5rem+env(safe-area-inset-bottom))] left-1/2 z-30 -translate-x-1/2 lg:hidden">
         {state.view === 'menu' && state.cart.length > 0 && (
-          <Button onClick={() => setCartOpen(true)} className="h-12 rounded-full px-5 shadow-float">
+          <Button onClick={() => setCartOpen(true)} className="h-12 whitespace-nowrap rounded-full px-5 shadow-float">
             <span className="relative"><ShoppingBasket size={19} /><span className="absolute -right-2 -top-2 flex h-4 min-w-4 items-center justify-center rounded-full bg-amber-400 px-1 text-xs text-charcoal-900">{state.cart.length}</span></span>
             {t('common.view_cart')} · {money(cartTotal)}
           </Button>
@@ -176,7 +176,7 @@ export default function App() {
         <MobileNav active={consoleOpen} icon={LayoutDashboard} label={t('common.nav_demo')} onClick={() => setConsoleOpen(true)} />
       </nav>
 
-      <div className="pointer-events-none fixed left-1/2 top-24 z-40 -translate-x-1/2 rounded-full bg-charcoal-900/90 px-4 py-2 text-xs font-semibold text-white shadow-float">
+      <div className="pointer-events-none fixed left-1/2 top-24 z-40 max-w-[calc(100vw-2rem)] -translate-x-1/2 truncate rounded-full bg-charcoal-900/90 px-4 py-2 text-xs font-semibold text-white shadow-float">
         {state.lastMessage}
       </div>
     </div>

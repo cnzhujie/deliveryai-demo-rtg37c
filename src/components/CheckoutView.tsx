@@ -15,7 +15,7 @@ export function CheckoutView({ items, paid, onPay, onBack }: CheckoutViewProps) 
   const payable = subtotal - discount
 
   if (paid) return (
-    <main className="mx-auto flex min-h-screen max-w-lg items-center px-5 py-10"><section className="w-full rounded-3xl bg-white p-7 text-center shadow-float"><span className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-emerald-50 text-emerald-600"><Check size={36} /></span><p className="mt-6 text-sm font-bold text-emerald-600">{t('checkout.success_badge')}</p><h1 className="mt-2 text-3xl font-extrabold text-charcoal-900">{t('checkout.success_title')}</h1><p className="mt-3 whitespace-pre-line leading-7 text-charcoal-500">{t('checkout.success_desc')}</p><div className="mt-6 rounded-2xl bg-rice-100 p-4"><p className="text-sm text-charcoal-500">{t('checkout.paid')}</p><p className="mt-1 text-3xl font-extrabold text-chili-500">{money(payable)}</p></div><Button onClick={onBack} variant="outline" className="mt-6 w-full">{t('checkout.back')}</Button></section></main>
+    <main className="mx-auto flex min-h-screen max-w-lg items-center px-5 py-10 pb-28 lg:pb-10"><section className="w-full rounded-3xl bg-white p-7 text-center shadow-float"><span className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-emerald-50 text-emerald-600"><Check size={36} /></span><p className="mt-6 text-sm font-bold text-emerald-600">{t('checkout.success_badge')}</p><h1 className="mt-2 text-3xl font-extrabold text-charcoal-900">{t('checkout.success_title')}</h1><p className="mt-3 whitespace-pre-line leading-7 text-charcoal-500">{t('checkout.success_desc')}</p><div className="mt-6 rounded-2xl bg-rice-100 p-4"><p className="text-sm text-charcoal-500">{t('checkout.paid')}</p><p className="mt-1 text-3xl font-extrabold text-chili-500">{money(payable)}</p></div><Button onClick={onBack} variant="outline" className="mt-6 w-full">{t('checkout.back')}</Button></section></main>
   )
 
   const methods = [
@@ -24,7 +24,7 @@ export function CheckoutView({ items, paid, onPay, onBack }: CheckoutViewProps) 
   ]
 
   return (
-    <main className="mx-auto max-w-4xl px-4 py-6 lg:py-10">
+    <main className="mx-auto max-w-4xl px-4 py-6 pb-28 lg:py-10">
       <button onClick={onBack} className="mb-5 text-sm font-bold text-charcoal-500 hover:text-chili-500">← {t('checkout.back')}</button>
       <div className="grid gap-5 lg:grid-cols-5">
         <section className="rounded-3xl bg-white p-5 shadow-card lg:col-span-3">

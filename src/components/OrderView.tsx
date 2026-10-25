@@ -26,11 +26,11 @@ export function OrderView({ items, stage, onAddMore, onCancel, onCheckout }: Ord
   const total = items.filter((item) => item.cancelState !== 'approved').reduce((sum, item) => sum + item.price * item.quantity, 0)
 
   if (!items.length) return (
-    <main className="mx-auto max-w-2xl px-4 py-16 text-center"><span className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-chili-500 shadow-card"><ReceiptText size={28} /></span><h2 className="mt-5 text-2xl font-extrabold text-charcoal-900">{t('order.empty_title')}</h2><p className="mt-2 text-charcoal-500">{t('order.empty_desc')}</p><Button onClick={onAddMore} className="mt-6"><Plus size={17} />{t('order.start')}</Button></main>
+    <main className="mx-auto max-w-2xl px-4 py-16 pb-28 text-center lg:pb-16"><span className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-chili-500 shadow-card"><ReceiptText size={28} /></span><h2 className="mt-5 text-2xl font-extrabold text-charcoal-900">{t('order.empty_title')}</h2><p className="mt-2 text-charcoal-500">{t('order.empty_desc')}</p><Button onClick={onAddMore} className="mt-6"><Plus size={17} />{t('order.start')}</Button></main>
   )
 
   return (
-    <main className="mx-auto max-w-5xl px-4 py-6 lg:px-6 lg:py-8">
+    <main className="mx-auto max-w-5xl px-4 py-6 pb-28 lg:px-6 lg:py-8">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between"><div><p className="text-sm font-bold text-chili-500">{t('order.badge')}</p><h1 className="mt-1 text-3xl font-extrabold text-charcoal-900">{t('order.title')}</h1></div><Button variant="outline" onClick={onAddMore}><Plus size={17} />{t('order.add_more')}</Button></div>
       <div className="mt-6 grid gap-5 lg:grid-cols-5">
         <section className="rounded-3xl bg-charcoal-900 p-5 text-white shadow-card lg:col-span-2">
